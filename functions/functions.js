@@ -37,8 +37,7 @@ const submitCompromisso = (obj, callback) => {
             console.log(response.data, ' response.data dentro das funcoes')
             if (callback) {
                 callback(response.data);
-            }
-            //  setOutput(output => response.data);
+            }    
         })
         .catch(error => {
             console.log(error);
