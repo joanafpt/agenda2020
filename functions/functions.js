@@ -8,10 +8,7 @@ const teste = () => {
 const getCompleteDataFromApi = (callback) => {
     axiosRetry(axios, { retries: 5 });
     axios.get('https://agenda2020.glitch.me/api/agenda/todos/')
-        .then(response => {
-            console.log(response.data);
-            //isto tem de estar onde estiver o state, nao aqui
-            //  setDataToRender(dataToRender => [...response.data]); 
+        .then(response => {       
             if (callback) {
                 callback(response.data);
             }
@@ -26,7 +23,7 @@ const searchCompromissoByDate = (dateToSearch, callback) => {
     axios.get('https://agenda2020.glitch.me/api/agenda/os-meus-compromissos/?date=' + dateToSearch)
         .then(response => {
             console.log(response.data, ' response.data dentro da api call');
-            if (callback) { //p mandar os dados para o ficheiro do componente
+            if (callback) { 
                 callback(response.data);
             }
         })
@@ -45,7 +42,7 @@ const submitCompromisso = (obj, callback) => {
         })
         .catch(error => {
             console.log(error);
-            callback(response.data); //inseri isto p ver se o erro vai p response e é renderizado tb
+            callback(response.data); 
         })
 }
 
@@ -61,15 +58,9 @@ const sendOnlyHoursAndMinutes = (objTwo, callback) => {
         .catch(error => { console.log(error) })
 }
 
-const getByDates = (initDate, endDate, callback) => {
-    //  console.log(initDate, 'initDate dentro do axios')
-    // console.log(endDate, ' enddate dentro do axios')
-    //   console.log(typeof(initDate))
-    //   console.log('https://agenda2020.glitch.me/api/agenda/compromissos-por-data/?dates=' + initDate+ endDate)
+const getByDates = (initDate, endDate, callback) => { 
     axios.get('https://agenda2020.glitch.me/api/agenda/compromissos-por-data/?dates=' + initDate + endDate)
-        .then(response => {
-            // console.log('estou aqui');
-            // console.log(response.data, ' response.data')
+        .then(response => {          
             if (callback) {
                 callback(response.data);
             }
