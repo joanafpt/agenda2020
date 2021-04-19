@@ -65,7 +65,7 @@ export default function SecondAddNewTask({ navigation }) {
 
     const callback = (data) => {
         console.log(data, 'data');
-        setOutput(output => [...data]); //NO CATCH do submitCompromisso inseri um response de erro, ver se funciona
+        setOutput(output => [...data]);
     }
 
     return (
@@ -134,7 +134,7 @@ export default function SecondAddNewTask({ navigation }) {
                     </View>
 
 
-                    {/*   <TextInput style={styles.textInput} onChangeText={getTime} value={time} />    */}
+            
 
                 </View>
 
