@@ -21,7 +21,7 @@ export default function Tranche({ navigation }) {
     }
 
     const searchByDates = () => {
-        functions.getByDates(initDate, endDate, callback); //callback tem de vir no fim dos args
+        functions.getByDates(initDate, endDate, callback); 
     }
 
     const callback = (data) => {
