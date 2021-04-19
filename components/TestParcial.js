@@ -19,14 +19,10 @@ export default function TestParcial({ navigation }) {
     }
 
     const searchByDates = () => {
-        functions.getByDates(initDate, endDate, callback); //callback tem de vir no fim dos args
-        //  console.log(initDate, 'dentro do searchByDates');
-        //   console.log(endDate, 'dentro do searchByDates');
+        functions.getByDates(initDate, endDate, callback);  
     }
 
     const callback = (data) => {
-      //  console.log(data, ' dentro do callback data ');
-      //  console.log(typeof (data));
         setOrderdTasks([...data]);
         typeof (data) === 'string' ? setNoResultsToShow(true) : setNoResultsToShow(false);
     }
