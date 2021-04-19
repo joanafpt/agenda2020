@@ -26,15 +26,11 @@ export default function List({ navigation }, props) {
 
     const callback = (data) => {
         (dateToSearch) => setDateToSearch(data)
-        setResponseFromDB(responseFromDB => data) // atenbcao, diferenciar se é string de se nao é! 
-        //para q output saia correto
-        //  console.log(data, ' data dentro do callback');
-        // console.log(typeof(data), 'typeof data')
+        setResponseFromDB(responseFromDB => data) 
         typeof (data) === 'string' ? setResponseIsString(true) : setResponseIsString(false)
     }
 
     const getTaskByProvidedDate = () => {
-        // console.log(functions.searchCompromissoByDate)
         functions.searchCompromissoByDate(dateToSearch, callback)
     }
 
@@ -69,7 +65,7 @@ export default function List({ navigation }, props) {
                     onDateChange={(dateToSearch) => setDateToSearch(dateToSearch)}
                 />
 
-                {/*     <Button title="test"  onPress={getTaskByProvidedDate} /> */}
+  
 
                 <View style={Buttons.buttonsContainer}>
                     <TouchableOpacity
